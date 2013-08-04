@@ -1,0 +1,5 @@
+*.csproj
+*.pidb
+*.unityproj
+/TestFighter/Library/metadata
+/TestFighter/Library/ScriptAssemblies
