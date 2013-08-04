@@ -120,23 +120,40 @@ public class ReadInput : MonoBehaviour {
 	//	string newCharacter :: Name of the Character you wish to use
 	//		Ex: I pass in character name "Bob" so there must be a file in the folder set in PATH named "Bob.txt"
 	//Output: string
-	//	If successful, returns new value for characterPath
-	//	If unsuccessful, returns unchanged characterPath
-	public string SetCharacter(string newCharacter)
+	//	If successful, changes value of characterPath to new one, returns true
+	//	If unsuccessful, characterPath remains unchanged, returns false
+	public bool SetCharacter(string newCharacter)
 	{
 		//check if character file exists
-		string newCharacterPath = System.IO.Path.Combine(PATH, (newCharacter + ".txt"));
+		string newCharacterPath;
+		newCharacterPath = GetNewPathFromCharacterName(newCharacter);
+		
 		if(!File.Exists(newCharacterPath))
 		{
-			Debug.LogError("
+			Debug.LogError("Character " + newCharacter + " does not exist");
+			return false;
 		}
 		
 		//check if old filestream is open (implying there is already a character set)
-			//if open, close it
-			//else, do nothing
+		if(fin != null)
+		{
+			//if open, close it and get a new one
+			fin.Close();
+			fin.Dispose();
+		}
+		
 		//change character name to new one
+		characterPath = newCharacterPath;
+		
 		//open new filestream based on new name
+		fin = new FileStream(newCharacterPath, System.IO.FileMode.Open);
 		
 		//that should do it
+		return true;
+	}
+	
+	private string GetNewPathFromCharacterName(string newCharacter)
+	{
+		return System.IO.Path.Combine(PATH, (newCharacter+".txt"));
 	}
 }
