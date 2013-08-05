@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public struct Node<T> : NodeBase {
+public struct Node<T> {
 	
 	private T data;
 	public T Data
@@ -16,6 +16,6 @@ public struct Node<T> : NodeBase {
 		}
 	}
 	
-	public NodeBase* next;
+	public NodeBase next;
 	
 };
