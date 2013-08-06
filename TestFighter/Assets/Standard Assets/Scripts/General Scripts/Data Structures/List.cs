@@ -15,7 +15,7 @@ public class List<T> {
 	{
 		get
 		{
-			GetAt(i);
+			return GetAt(i);
 		}
 	}*/
 	
@@ -26,7 +26,8 @@ public class List<T> {
 			Node<T> currentNode = front;
 			for(int j = 1; j < i; j++)
 			{
-				currentNode = currentNode.next;
+				//weeeeeeird. don't like this, but if it works then go for it.
+				currentNode = (Node<T>)currentNode.next;
 			}
 			return currentNode;
 		}
