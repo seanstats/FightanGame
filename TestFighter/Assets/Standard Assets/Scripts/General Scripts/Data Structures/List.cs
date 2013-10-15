@@ -2,13 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class List<T> {
-	public int size = 0;
-	private Node<T> front;
-	private Node<T> back;
+	public int m_size = 0;
+	private Node<T> m_front;
+	//private Node<T> back;
 	
 	public List()
 	{
-		size = 0;
+		m_size = 0;
 	}
 	
 	/*public virtual Node<T> this[int i]
@@ -19,22 +19,52 @@ public class List<T> {
 		}
 	}*/
 	
-	private Node<T> GetAt(int i)
+	public Node<T> GetAt(int i)
 	{
-		if(i < size && i >=0)
+		if(i < m_size && i >=0)
 		{
-			Node<T> currentNode = front;
+			Node<T> currentNode = m_front;
 			for(int j = 1; j < i; j++)
 			{
-				//weeeeeeird. don't like this, but if it works then go for it.
+				//starting at j = 1 because we want to iterate i-1 times
 				currentNode = (Node<T>)currentNode.next;
 			}
 			return currentNode;
 		}
 		else
 		{
-			Debug.LogError("Index " + i + " is out of bounds.");
-			return front;
+			Debug.LogError("Index " + i + " is out of bounds: 0-" + m_size);
+			return m_front;
 		}	
+	}
+	
+	public bool AddAtIndex(int i, T newData)
+	{
+		if(i == 0)
+		{
+			Node <T> newNode = new Node<T>(newData);
+			newNode.next = m_front;
+			m_front = newNode;
+			m_size++;
+			return true;
+		}
+		else if(i <= m_size && i >= 1)
+		{
+			Node <T> newNode = new Node<T>(newData);
+			Node<T> currentNode = m_front;
+			for(int j = 1; j < i; j++)
+			{
+				currentNode = (Node<T>)currentNode.next;
+			}
+			newNode.next = currentNode.next;
+			currentNode.next = newNode;
+			m_size++;
+			return true;
+		}
+		else
+		{
+			Debug.LogError("Index " + i + " is out of bounds. List size: " + m_size);
+			return false;
+		}
 	}
 }

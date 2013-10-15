@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{17F61289-80E1-78D1-23D5-83E905515514}") = "TestFighter", "Assembly-CSharp-firstpass.csproj", "{A0E4A58D-DCD1-27EE-891F-521BD3F2D786}"
 EndProject
+Project("{17F61289-80E1-78D1-23D5-83E905515514}") = "TestFighter", "Assembly-CSharp.csproj", "{FE2C4B35-0DEF-2570-0C31-8DA1146881EB}"
+EndProject
 Project("{17F61289-80E1-78D1-23D5-83E905515514}") = "TestFighter", "Assembly-UnityScript-firstpass.unityproj", "{82C2AB9F-FC5E-575F-6F63-4B1C1E60E8D6}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{A0E4A58D-DCD1-27EE-891F-521BD3F2D786}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0E4A58D-DCD1-27EE-891F-521BD3F2D786}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0E4A58D-DCD1-27EE-891F-521BD3F2D786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2C4B35-0DEF-2570-0C31-8DA1146881EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2C4B35-0DEF-2570-0C31-8DA1146881EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2C4B35-0DEF-2570-0C31-8DA1146881EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2C4B35-0DEF-2570-0C31-8DA1146881EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{82C2AB9F-FC5E-575F-6F63-4B1C1E60E8D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{82C2AB9F-FC5E-575F-6F63-4B1C1E60E8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82C2AB9F-FC5E-575F-6F63-4B1C1E60E8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																			GlobalSection(MonoDevelopProperties) = preSolution
+																					GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

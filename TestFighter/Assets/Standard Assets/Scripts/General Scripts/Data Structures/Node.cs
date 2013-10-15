@@ -1,21 +1,26 @@
 using UnityEngine;
 using System.Collections;
 
-public struct Node<T> : INodeBase{
+public class Node<T> {
 	
-	private T data;
+	private T m_data;
 	public T Data
 	{
 		get
 		{
-			return data;
+			return m_data;
 		}
 		set
 		{
-			data = value;
+			m_data = value;
 		}
 	}
 	
-	public INodeBase next;
+	public Node<T> next;
 	
-};
+	public Node(T init)
+	{
+		m_data = init;
+	}
+	
+}
