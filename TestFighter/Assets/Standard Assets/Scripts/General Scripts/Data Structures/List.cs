@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class List<T> {
 	public int m_size = 0;
@@ -18,6 +19,8 @@ public class List<T> {
 			return GetAt(i);
 		}
 	}*/
+	
+	LinkedList<int> link;
 	
 	public Node<T> GetAt(int i)
 	{
